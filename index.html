@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>୧⍤⃝</title>
+  <style>
+  input{
+    width:200px;
+   height:40px;
+   }
+ center{
+   margin-top:130px;
+   }
+ button{
+   width:70px;
+   height:40px;
+   }
+ #anniu{
+   margin-top:20px;
+   }
+ body {
+      color: #333;
+      background-color: #fff;
+      transition: all 0.5s ease-out;
+    }
+    .night-mode {
+      color: #fff;
+      background-color: #333;
+    }
+ </style>
+  </head>
+  <body>	
+  <center>
+  <button id="mode-switch">模式切换</button>
+  <form id="quiz-form">
+    <h3>问题 1: 你的昵称首字母缩写为：</h3>
+    <input type="text" id="question1" required>
+    </br>
+    <h3>问题 2: 卡密为：</h3>
+    <input type="text" id="question2" required>
+    </br>
+    <button id="anniu" type="submit">进入</button>
+  </form>
+  </center>
+  <script>
+    document.getElementById("quiz-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var question1 = document.getElementById("question1").value;
+      var question2 = document.getElementById("question2").value;   
+      var correctAnswer1 = "lz";
+      var correctAnswer2 = "syxzlz";
+      if (question1 == correctAnswer1 && question2 == correctAnswer2) {
+        alert("回答正确！");
+        window.open("syx.html")
+      } else {
+        alert("回答错误！");
+      }
+    });
+  </script>
+  <script>
+  var modeSwitch = document.getElementById('mode-switch');
+    var body = document.body;
+    function toggleMode() {
+      body.classList.toggle('night-mode');
+      if (body.classList.contains('night-mode')) {
+        modeSwitch.textContent = 'Day Mode';
+      } else {
+        modeSwitch.textContent = 'Night Mode';
+      }
+    }
+    modeSwitch.addEventListener('click', toggleMode);
+  </script>
+ <script>
+function isIE() {
+var userAgent = navigator.userAgent;
+var pc = !/android|iphone|linux|micromessenger/i.test(userAgent)
+var isIE = /compatible/i.test(userAgent) && /MSIE/i.test(userAgent)
+var isIE11 = /Trident/i.test(userAgent) && /rv:11.0/i.test(userAgent)
+return Boolean(pc && (isIE || isIE11))
+}
+if (isIE()) {
+alert('对不起此网站不兼容ie浏览器，请更换浏览器访问。')
+}
+</script> 
+  </body>
+      </html>
